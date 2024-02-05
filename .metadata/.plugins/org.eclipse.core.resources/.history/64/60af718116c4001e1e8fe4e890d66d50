@@ -1,0 +1,8 @@
+package ejercicio01;
+
+import java.util.List;
+
+public class CrudNota {
+
+	private List<Nota> lista;
+}

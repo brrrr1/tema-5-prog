@@ -1,0 +1,6 @@
+package ejercicio01;
+
+public class CrudNota {
+
+	private List<Nota> lista;
+}
