@@ -1,63 +1,27 @@
 package ejercicio04;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+
+import utilidades.Leer;
 
 
 public class Principal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-List <String> lista = new ArrayList <String> ();
+		Map <Contacto, String> agenda = new HashMap<>();
+		Contacto c = new Contacto("Peter");
+		Contacto c2 = new Contacto("Malito");
+		Contacto c3 = new Contacto("Manue");
+		CrudContacto cc = new CrudContacto(agenda);
+		agenda.put(c, "123");
+		agenda.put(c2, "456");
+		agenda.put(c3, "789");
 		
-		Alumno a1 = new Alumno ("Moisés", "Dorado Gutiérrez", 1);
-		Alumno a2 = new Alumno ("Bruno", "Delgado Herrero", 2);
-		Alumno a3 = new Alumno ("Joaquín", "Carrascal Franco", 3);
-		Alumno a4 = new Alumno ("Victor", "Medina Lejeune", 4);
+		String nombre=Leer.dato();
 		
-		List <Alumno> listaAlum = new ArrayList <Alumno> ();
-		
-		//Lista de String
-		lista.add("Ángel");
-		lista.add("Miguel");
-		
-		System.out.println(lista.contains("Miguel"));
-		
-		System.out.println(lista);
-		
-		System.out.println(lista.size());
-		
-		lista.remove(0);
-				
-		System.out.println(lista);
-
-		System.out.println(lista.size());
-		
-		System.out.println("");
-		System.out.println("");
-		
-		//Lista de Alumno
-		listaAlum.add(a1);
-		listaAlum.add(a2);
-		listaAlum.add(a3);
-		listaAlum.add(a4);
-		
-		System.out.println(listaAlum.contains(a1));
-			
-		System.out.println(listaAlum);
-
-		System.out.println(listaAlum.size());
-		
-		listaAlum.remove(0);
-		
-		System.out.println(listaAlum);
-		
-		System.out.println(listaAlum.size());
-
-		
-
-		
+		System.out.println(cc.buscarPorNombre(nombre));
 	}
 
 }
