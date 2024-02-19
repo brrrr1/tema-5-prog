@@ -109,7 +109,7 @@ public class Principal {
 				Socio so;
 				so= cs.buscarPorDni(dni);
 				cuotas=so.getCuota();
-				c.pagarCuotasAtrasadas(cuotas, cuotasAtrasadas);
+				System.out.println(c.pagarCuotasAtrasadas(cuotas, cuotasAtrasadas));
 				
 			
 			case 0:
