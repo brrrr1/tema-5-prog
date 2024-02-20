@@ -2,7 +2,7 @@ package ejercicio02;
 
 
 
-public interface ITesoreria {
+public interface IAdministracion {
 	
 	public double calcularAlquilerPista();
 	
@@ -20,7 +20,15 @@ public interface ITesoreria {
 	
 	public void verPistasLibres();
 	
+	public void verMaterial();
 	
+	public void calcularGastoTorneo();
+	
+	public void calcularPremioTorneo();
+	
+	
+	
+
 	
 	private double calcularPagoEntrada (double matricula, int temporadaAlta, double extraTemporada) {
 		if(temporadaAlta == 1) {

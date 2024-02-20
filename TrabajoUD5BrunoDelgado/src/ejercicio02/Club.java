@@ -1,6 +1,6 @@
 package ejercicio02;
 
-public class Club implements ITesoreria {
+public class Club implements IAdministracion {
 
 	private CRUDSocio cs;
 	private String nombre;
@@ -29,6 +29,72 @@ public class Club implements ITesoreria {
 	@Override
 	public String toString() {
 		return "Club [cs=" + cs + ", nombre=" + nombre + "]";
+	}
+
+	@Override
+	public double calcularAlquilerPista() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double calcularGastoLimpieza() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void verNumeroTrabajadores() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void verObjetosPerdidos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public double calcularPrecioMenuDelDia() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double calcularGastoAspersores() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double calcularGastoMaterial() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void verPistasLibres() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void verMaterial() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void calcularGastoTorneo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void calcularPremioTorneo() {
+		// TODO Auto-generated method stub
+		
 	}
 
 
