@@ -65,11 +65,7 @@ public class CRUDSocio {
 		}
 	}
 	
-	public void modificarCuotas(String dni, double nuevaCuota) {
-		Socio s;
-		s = buscarPorDni(dni);
-		s.setCuota(nuevaCuota);
-	}
+
 	
 	
 	

@@ -31,11 +31,7 @@ public class ClubVerano implements ITesoreria {
 		return "ClubVerano [cs=" + cs + ", cuotaVerano=" + cuotaVerano + "]";
 	}
 	
-	public double calcularDineroGastado(int aniosEnElClub, String dni) {
-		Socio s;
-		s = cs.buscarPorDni(dni);
-		return s.getCuota()*(aniosEnElClub)+cuotaVerano;
-	}
+
 
 
 }

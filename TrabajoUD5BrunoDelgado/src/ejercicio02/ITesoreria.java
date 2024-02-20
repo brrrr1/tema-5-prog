@@ -4,20 +4,39 @@ package ejercicio02;
 
 public interface ITesoreria {
 	
-	public double calcularDineroGastado(int anio, String dni);
+	public double calcularAlquilerPista();
 	
-	private int hacerResta(int a, int b) {
-		return a-b;
+	public double calcularGastoLimpieza();
+	
+	public void verNumeroTrabajadores();
+	
+	public void verObjetosPerdidos(); 
+	
+	public double calcularPrecioMenuDelDia();
+	
+	public double calcularGastoAspersores();
+	
+	public double calcularGastoMaterial();
+	
+	public void verPistasLibres();
+	
+	
+	
+	private double calcularPagoEntrada (double matricula, int temporadaAlta, double extraTemporada) {
+		if(temporadaAlta == 1) {
+			return matricula + extraTemporada;
+		}if(temporadaAlta == 0) {
+			return matricula;
+		}else {
+			return 0;
+		}
 	}
 	
-	default int calcularAnios(int anioActual, int anioEntrada) {
-		return hacerResta(anioActual, anioEntrada);
+	default double calcularPrimerPago(double matricula, int temporadaAlta, double extraTemporada, double cuota) {
+		return calcularPagoEntrada(matricula, temporadaAlta, extraTemporada) + cuota;
 	}
 	
-	
-	default double pagarCuotasAtrasadas(double cuotas, int cuotasAtrasadas) {
-		return cuotas*cuotasAtrasadas;
-	}
+
 	
 	
 	

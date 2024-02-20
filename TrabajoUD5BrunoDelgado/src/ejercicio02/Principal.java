@@ -25,14 +25,16 @@ public class Principal {
 		int opcion;
 		int cuotasAtrasadas;
 		double cuotas;
+		double cuotaDelAnio;
+		int temporadaAlta;
+		double matricula;
+		double extraPorTemporada;
 		do {
 			System.out.println("""
-					1) Añadir nuevo socio
+					1) Dar de alta a un nuevo socio
 					2) Ver lista
 					3) Modificar cuota de un socio
 					4) Borrar un socio
-					5) Calcular total gastado por un socio
-					6) Para pagar tus cuotas atrasadas
 					0) Salir
 					""");
 			eleccion=Leer.datoInt();
@@ -45,73 +47,49 @@ public class Principal {
 				nombre=Leer.dato();
 				System.out.println("Diga apellidos");
 				apellidos=Leer.dato();
-				System.out.println("Diga cuota");
-				cuota=Leer.datoDouble();
-				Socio s = new Socio (dni, nombre, apellidos, cuota);
+				Socio s = new Socio (dni, nombre, apellidos);
 				cs.agregar(s);
+				
+				System.out.println("¿Cuál es la cuota para este año?");
+				cuotaDelAnio=Leer.datoDouble();
+				
+				System.out.println("¿Estamos en temporada alta? 1 SI / 0 NO");
+				temporadaAlta=Leer.datoInt();
+				
+				System.out.println("¿Cuál es el coste de la matrícula?");
+				matricula=Leer.datoInt();
+				
+				System.out.println("¿Va a entrar también al club de verano? 1 SI / 0 NO");
+				opcion=Leer.datoInt();
+				
+				System.out.println("¿Cuál es el coste extra por temporada alta?");
+				extraPorTemporada=Leer.datoDouble();
+				switch(opcion) {
+				case 1:
+					System.out.printf("La cantidad a aportar por la matrícula y el primer mes es de %.2f euros\n", cv.calcularPrimerPago(matricula, temporadaAlta, extraPorTemporada, cuotaDelAnio));
+					break;
+					
+				case 2:
+					System.out.printf("La cantidad a aportar por la matrícula y el primer mes es de %.2f euros\n", c.calcularPrimerPago(matricula, temporadaAlta, extraPorTemporada, cuotaDelAnio));
+					break;
+					
+				default: System.out.println("Opción incorrecta");
+				}
 				
 			break;
 			
 			case 2:
 				cs.imprimirLista();
-				
+			
 			break;
 			
 			case 3:
 				System.out.println("Diga dni del socio");
 				dni = Leer.dato();
-				System.out.println("Diga nueva cuota");
-				cuota=Leer.datoDouble();
-				cs.modificarCuotas(dni, cuota);
-			
-			break;
-			
-			case 4:
-				System.out.println("Diga dni del socio");
-				dni = Leer.dato();
 				cs.borrar(dni);
 				
 			break;
-			
-			case 5:
-				System.out.println("Está en el Club de Verano tambén? 1 SI 0 NO");
-				opcion=Leer.datoInt();
-				if(opcion == 0) {
-					System.out.println("Diga dni del socio");
-					dni = Leer.dato();
-					System.out.println("Diga en que año entró al club");
-					anioEntrada=Leer.datoInt();
-					System.out.println("Diga que año es");
-					anioActual=Leer.datoInt();
-					aniosEnElClub=c.calcularAnios(anioActual, anioEntrada);
-					System.out.println(c.calcularDineroGastado(aniosEnElClub, dni));
-				}if(opcion==1) {
-					System.out.println("Diga dni del socio");
-					dni = Leer.dato();
-					System.out.println("Diga en que año entró al club");
-					anioEntrada=Leer.datoInt();
-					System.out.println("Diga que año es");
-					anioActual=Leer.datoInt();
-					aniosEnElClub=cv.calcularAnios(anioActual, anioEntrada);
-					System.out.println(cv.calcularDineroGastado(aniosEnElClub, dni));
-				}else {
-					System.out.println("No has elegido una opción correcta");
-				}
-				
-				
-			break;
-			
-			case 6:
-				System.out.println("Diga dni del socio");
-				dni = Leer.dato();
-				System.out.println("¿Cuántas cuotas tienes atrasadas?");
-				cuotasAtrasadas=Leer.datoInt();
-				Socio so;
-				so= cs.buscarPorDni(dni);
-				cuotas=so.getCuota();
-				System.out.println(c.pagarCuotasAtrasadas(cuotas, cuotasAtrasadas));
-				
-			
+		
 			case 0:
 				System.out.println("Adiós");
 			break;

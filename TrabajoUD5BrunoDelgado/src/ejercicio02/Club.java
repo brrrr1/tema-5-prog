@@ -31,10 +31,6 @@ public class Club implements ITesoreria {
 		return "Club [cs=" + cs + ", nombre=" + nombre + "]";
 	}
 
-	public double calcularDineroGastado(int aniosEnElClub, String dni) {
-		Socio s;
-		s = cs.buscarPorDni(dni);
-		return s.getCuota()*(aniosEnElClub);
-	}
+
 	
 }
