@@ -1,4 +1,4 @@
-package ejercicio02;
+package ejemploClub;
 
 
 import java.util.List;

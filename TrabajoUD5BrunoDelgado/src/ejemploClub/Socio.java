@@ -1,4 +1,4 @@
-package ejercicio02;
+package ejemploClub;
 
 public class Socio {
 

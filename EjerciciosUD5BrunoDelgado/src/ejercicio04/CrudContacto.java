@@ -1,6 +1,8 @@
 package ejercicio04;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -45,15 +47,27 @@ public class CrudContacto {
 	
 	public Contacto buscarPorNombre (String nombre) {	
 		
-		Contacto c = null;
-		Set <Contacto> claves = agenda.keySet();
-		for (Contacto conct : claves ) {
-			if(conct.getNombre().equals(nombre)) {
-				c = conct;
+		
+		//Set <Contacto> claves = agenda.keySet(); antes tenía conct : claves
+		for (Contacto conct : agenda.keySet() ) {
+			if(conct.getNombre().equalsIgnoreCase(nombre)) {
+				return conct;
 			}
 		
 		}
-		return c;
+		return null;
+		
+	}
+	
+	public List<Contacto> buscarPorNombreLista (String nombre) {		
+		List <Contacto> lista = new ArrayList<Contacto>();
+		for (Contacto conct : agenda.keySet() ) {
+			if(conct.getNombre().equalsIgnoreCase(nombre)) {
+				lista.add(conct);
+			}
+		
+		}
+		return lista;
 		
 	}
 	
@@ -77,4 +91,12 @@ public class CrudContacto {
 	public void imprimirAgenda() {
 		System.out.println(agenda);
 	}
+	
+	/*public void imprimir2() {
+		for(Map.entry(Contacto, String) entrada : agenda.keySet()){
+			Contacto c = entrada.getKey();
+			int telefono = entrada.getValue();
+			System.out.println("Nombre: "+ c.getNombre());
+		}
+	}*/
 }

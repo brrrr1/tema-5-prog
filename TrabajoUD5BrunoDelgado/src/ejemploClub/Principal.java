@@ -1,9 +1,10 @@
-package ejercicio02;
+package ejemploClub;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import utilidades.Leer;
+
 
 public class Principal {
 

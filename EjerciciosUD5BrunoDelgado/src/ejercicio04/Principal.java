@@ -39,6 +39,7 @@ public class Principal {
 					3) Modificar nombre de un contacto
 					4) Modificar teléfono de un contacto
 					5) Borrar un contacto
+					6) Buscar todos los contactos con un nombre
 					0) Salir
 					""");
 			eleccion=Leer.datoInt();
@@ -83,6 +84,11 @@ public class Principal {
 				cc.borrar(nombre);
 				
 			break;
+			
+			case 6:
+				System.out.println("Diga nombre para buscar");
+				nombre=Leer.dato();		
+				System.out.println(cc.buscarPorNombreLista(nombre));
 			
 			case 0:
 				System.out.println("Adiós");

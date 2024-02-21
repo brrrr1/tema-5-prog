@@ -1,12 +1,13 @@
-package ejercicio02;
+package ejemploClub;
 
-public class ClubVerano implements IAdministracion {
+public class Club implements IAdministracion {
+
 	private CRUDSocio cs;
-	private double cuotaVerano;
+	private String nombre;
 	
-	public ClubVerano(CRUDSocio cs, double cuotaVerano) {
+	public Club(CRUDSocio cs, String nombre) {
 		this.cs = cs;
-		this.cuotaVerano = cuotaVerano;
+		this.nombre = nombre;
 	}
 
 	public CRUDSocio getCs() {
@@ -17,18 +18,17 @@ public class ClubVerano implements IAdministracion {
 		this.cs = cs;
 	}
 
-
-	public double getCuotaVerano() {
-		return cuotaVerano;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setCuotaVerano(double cuotaVerano) {
-		this.cuotaVerano = cuotaVerano;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	@Override
 	public String toString() {
-		return "ClubVerano [cs=" + cs + ", cuotaVerano=" + cuotaVerano + "]";
+		return "Club [cs=" + cs + ", nombre=" + nombre + "]";
 	}
 
 	@Override
@@ -96,8 +96,7 @@ public class ClubVerano implements IAdministracion {
 		// TODO Auto-generated method stub
 		
 	}
+
+
 	
-
-
-
 }

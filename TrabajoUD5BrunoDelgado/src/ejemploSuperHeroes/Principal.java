@@ -1,4 +1,4 @@
-package proyecyo;
+package ejemploSuperHeroes;
 
 public class Principal {
 
