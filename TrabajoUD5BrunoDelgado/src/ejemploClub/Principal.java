@@ -11,31 +11,27 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		List<Socio> lista = new ArrayList();
+		List<Socio> lista = new ArrayList<Socio>();
 		CRUDSocio cs = new CRUDSocio(lista);
 		Club c = new Club(cs, "Club Brrr");
-		ClubVerano cv = new ClubVerano(cs, 300);
+		ClubVerano cv = new ClubVerano(cs);
+		ClubInvierno ci = new ClubInvierno(cs);
 		int eleccion;
 		String dni;
 		String nombre;
 		String apellidos;
-		double cuota;
-		int anioEntrada;
-		int anioActual;
-		int aniosEnElClub;
 		int opcion;
-		int cuotasAtrasadas;
-		double cuotas;
 		double cuotaDelAnio;
 		int temporadaAlta;
 		double matricula;
 		double extraPorTemporada;
+		double pagoVerano;
+		double pagoInvierno;
 		do {
 			System.out.println("""
 					1) Dar de alta a un nuevo socio
 					2) Ver lista
-					3) Modificar cuota de un socio
-					4) Borrar un socio
+					3) Borrar un socio
 					0) Salir
 					""");
 			eleccion=Leer.datoInt();
@@ -54,28 +50,55 @@ public class Principal {
 				System.out.println("¿Cuál es la cuota para este año?");
 				cuotaDelAnio=Leer.datoDouble();
 				
-				System.out.println("¿Estamos en temporada alta? 1 SI / 0 NO");
-				temporadaAlta=Leer.datoInt();
-				
 				System.out.println("¿Cuál es el coste de la matrícula?");
 				matricula=Leer.datoInt();
 				
-				System.out.println("¿Va a entrar también al club de verano? 1 SI / 0 NO");
-				opcion=Leer.datoInt();
+				System.out.println("¿Estamos en temporada alta? 1 SI / 0 NO");
+				temporadaAlta=Leer.datoInt();
 				
 				System.out.println("¿Cuál es el coste extra por temporada alta?");
 				extraPorTemporada=Leer.datoDouble();
-				switch(opcion) {
-				case 1:
-					System.out.printf("La cantidad a aportar por la matrícula y el primer mes es de %.2f euros\n", cv.calcularPrimerPago(matricula, temporadaAlta, extraPorTemporada, cuotaDelAnio));
-					break;
+				
+
+				
+				System.out.println("""
+						¿Va a entrar también al club de verano o invierno? 
+						1) VERANO
+						2) INVIERNO
+						3) AMBOS
+						0) NINGUNO
+						""");
+				opcion=Leer.datoInt();
+				if(opcion==1) {
+					System.out.println("¿Cuál es el pago por el club de verano?");
+					pagoVerano=Leer.datoDouble();
+					pagoInvierno=0;
 					
-				case 2:
-					System.out.printf("La cantidad a aportar por la matrícula y el primer mes es de %.2f euros\n", c.calcularPrimerPago(matricula, temporadaAlta, extraPorTemporada, cuotaDelAnio));
-					break;
+					System.out.printf("La cantidad a aportar por la matrícula y el primer mes es de %.2f euros.\n", 
+							cv.calcularPrimerPago(matricula, temporadaAlta, extraPorTemporada, cuotaDelAnio, opcion, pagoVerano, pagoInvierno));
+				}if(opcion==2) {
+					System.out.println("¿Cuál es el pago por el club de invierno?");
+					pagoInvierno=Leer.datoDouble();
+					pagoVerano=0;
 					
-				default: System.out.println("Opción incorrecta");
+					System.out.printf("La cantidad a aportar por la matrícula y el primer mes es de %.2f euros.\n", 
+							ci.calcularPrimerPago(matricula, temporadaAlta, extraPorTemporada, cuotaDelAnio, opcion, pagoVerano, pagoInvierno));
+				}if(opcion==3) {
+					System.out.println("¿Cuál es el pago por el club de verano?");
+					pagoVerano=Leer.datoDouble();
+					
+					System.out.println("¿Cuál es el pago por el club de invierno?");
+					pagoInvierno=Leer.datoDouble();
+					System.out.printf("La cantidad a aportar por la matrícula y el primer mes es de %.2f euros.\n", 
+							c.calcularPrimerPago(matricula, temporadaAlta, extraPorTemporada, cuotaDelAnio, opcion, pagoVerano, pagoInvierno));
+				}else {
+					pagoVerano=0;
+					pagoInvierno=0;
+					System.out.printf("La cantidad a aportar por la matrícula y el primer mes es de %.2f euros.\n", 
+							c.calcularPrimerPago(matricula, temporadaAlta, extraPorTemporada, cuotaDelAnio, opcion, pagoVerano, pagoInvierno));
 				}
+				
+				
 				
 			break;
 			

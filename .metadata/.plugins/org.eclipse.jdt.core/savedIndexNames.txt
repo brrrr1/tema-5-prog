@@ -1,5 +1,4 @@
-INDEX VERSION 1.134+C:\Users\delgado.hebru24_tria\Desktop\PROG\TEMA 5\.metadata\.plugins\org.eclipse.jdt.core
-89803183.index
+INDEX VERSION 1.134+C:\Users\bruno\OneDrive\Escritorio\CLASE\PROGRAMACIÓN\tema-5-prog\.metadata\.plugins\org.eclipse.jdt.core
 1865797976.index
 3413725848.index
 2714395321.index

@@ -1,28 +1,22 @@
 package ejemploClub;
 
-public class ClubVerano implements IAdministracion {
+public class ClubInvierno implements IAdministracion{
 	private CRUDSocio cs;
 
 	
-	public ClubVerano(CRUDSocio cs) {
+
+	public ClubInvierno(CRUDSocio cs) {
+		super();
 		this.cs = cs;
-
-	}
-
-	public CRUDSocio getCs() {
-		return cs;
 	}
 
 	public void setCs(CRUDSocio cs) {
 		this.cs = cs;
 	}
 
-
-	
-
 	@Override
 	public String toString() {
-		return "ClubVerano [cs=" + cs + ", cuotaVerano=]";
+		return "ClubInvierno [cs=" + cs + "]";
 	}
 
 	@Override
@@ -91,7 +85,5 @@ public class ClubVerano implements IAdministracion {
 		
 	}
 	
-
-
-
+	
 }
