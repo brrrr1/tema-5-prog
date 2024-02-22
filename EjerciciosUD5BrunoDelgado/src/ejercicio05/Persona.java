@@ -62,6 +62,7 @@ public class Persona implements Comparable<Persona>{
 	}
 
 	@Override
+	//ver como se hace por orden alfabético
 	public int compareTo(Persona p) {
 		// TODO Auto-generated method stub
 		if(this.edad < p.getEdad()) {

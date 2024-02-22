@@ -35,6 +35,8 @@ public class Principal {
 			System.out.println(pers);
 		}
 		
+		System.out.println();
+		System.out.println();
 		System.out.println("ORDENADOS POR EDAD (NO NATURAL)");
 		
 		Collections.sort(personas, new CompararPorAnioNacimiento());
@@ -44,7 +46,27 @@ public class Principal {
 		}
 		
 		System.out.println();
+		
 
+		System.out.println();
+		System.out.println();
+		System.out.println("ORDENADOS POR NOMBRE (NO NATURAL)");
+		
+		Collections.sort(personas, new ComparaPorNombre());
+		System.out.println();
+		for (Persona pers : personas) {
+			System.out.println(pers);
+		}
+		
+		
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println("Volvemos a ver la lista");
+		System.out.println(personas);
+		for (Persona pers : personas) {
+			System.out.println(pers);
+		}
 		
 	}
 

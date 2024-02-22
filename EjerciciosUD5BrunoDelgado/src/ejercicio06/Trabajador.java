@@ -87,9 +87,17 @@ public class Trabajador implements Comparable<Trabajador> {
 
 
 	@Override
-	public int compareTo(Trabajador o) {
+	public int compareTo(Trabajador t) {
 		// TODO Auto-generated method stub
-		return 0;
+		if(this.horasTrabajadas < t.getHorasTrabajadas()) {
+			return -1;
+		}else {
+			if(this.horasTrabajadas > t.getHorasTrabajadas()) {
+				return 1;
+			}
+			return 0;
+		}
+		
 	}
 	
 	
