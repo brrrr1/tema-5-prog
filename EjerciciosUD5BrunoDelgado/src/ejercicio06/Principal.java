@@ -10,11 +10,34 @@ public class Principal {
 		// TODO Auto-generated method stub
 		List <Trabajador> trabajadores = new ArrayList<Trabajador>();
 		
-		trabajadores.add(new Trabajador("NOMBRE", "1A", 40, 1700));
-		trabajadores.add(new Trabajador("NOMBRE2", "2A", 34, 1520));
+		trabajadores.add(new Trabajador("NOMBRE", "1A", 30, 1700));
+		trabajadores.add(new Trabajador("NOMBRE2", "2A", 65, 1520));
 		trabajadores.add(new Trabajador("NOMBRE3", "3A", 45, 3200));
 		
-		Collections.sort(trabajadores, new ComparaPorSueldo());
+		
+		System.out.println("POR SUELDO:");
+		System.out.println();
+		Collections.sort(trabajadores);
+		for (Trabajador t : trabajadores) {
+			System.out.println(t);
+		}
+		
+		System.out.println();
+		System.out.println();
+		
+		System.out.println("POR HORAS DE MENOR A MAYOR:");
+		System.out.println();
+		Collections.sort(trabajadores, new ComparaPorHoras());
+		for (Trabajador t : trabajadores) {
+			System.out.println(t);
+		}
+		
+		System.out.println();
+		System.out.println();
+		
+		System.out.println("POR HORAS DE MAYOR A MENOR:");
+		System.out.println();
+		Collections.sort(trabajadores, new ComparaPorHorasDesc());
 		for (Trabajador t : trabajadores) {
 			System.out.println(t);
 		}

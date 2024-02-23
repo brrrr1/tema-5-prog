@@ -59,46 +59,30 @@ public class Trabajador implements Comparable<Trabajador> {
 	@Override
 	public String toString() {
 		return "Trabajador [nombre=" + nombre + ", dni=" + dni + ", horasTrabajadas=" + horasTrabajadas
-				+ ", sueldoFinal=" + sueldoFinal + "]";
+				+ ", sueldoFinal=" + calcularSueldoFinal() + "]";
 	}
 
-
-	public int compareToAsc(Trabajador t) {
-		if(this.horasTrabajadas < t.getHorasTrabajadas()) {
-			return -1;
-		}else {
-			if(this.horasTrabajadas > t.getHorasTrabajadas()) {
-				return 1;
-			}
-			return 0;
-		}
-	}
-	
-	public int compareToDesc(Trabajador t) {
-		if(this.horasTrabajadas < t.getHorasTrabajadas()) {
-			return -1;
-		}else {
-			if(this.horasTrabajadas > t.getHorasTrabajadas()) {
-				return 1;
-			}
-			return 0;
-		}
+	public double calcularSueldoFinal() {
+		int cinco = 5;
+		return sueldoFinal+horasTrabajadas*cinco;
 	}
 
 
 	@Override
 	public int compareTo(Trabajador t) {
 		// TODO Auto-generated method stub
-		if(this.horasTrabajadas < t.getHorasTrabajadas()) {
-			return -1;
+		if(this.calcularSueldoFinal() < t.calcularSueldoFinal()) {
+			return 1;
 		}else {
-			if(this.horasTrabajadas > t.getHorasTrabajadas()) {
-				return 1;
+			if(this.calcularSueldoFinal() > t.calcularSueldoFinal()) {
+				return -1;
 			}
 			return 0;
 		}
 		
 	}
+	
+
 	
 	
 }
