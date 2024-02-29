@@ -22,7 +22,6 @@ public class Principal {
 		
 		LineaDeVenta ldv3 = new LineaDeVenta (lechuga, 4);
 		
-		int tam=3;
 		
 		int eleccion;
 		
