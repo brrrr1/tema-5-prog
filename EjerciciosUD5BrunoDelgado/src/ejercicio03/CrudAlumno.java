@@ -54,10 +54,11 @@ public class CrudAlumno {
 		
 		while (ite.hasNext() && !encontrado) {
 			a=ite.next();
-		if(a.getCodAlum()==/*si fuera string sería equals*/(codAlum)) {
-			encontrado = true;
+			if(a.getCodAlum()==/*si fuera string sería equals*/(codAlum)) {
+					encontrado = true;
+			}
 		}
-		}
+		
 		if(encontrado) {
 			return a;
 		}else {

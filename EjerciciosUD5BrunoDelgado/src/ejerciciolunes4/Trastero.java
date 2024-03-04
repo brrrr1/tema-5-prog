@@ -64,10 +64,10 @@ public class Trastero implements Comparable <Trastero> {
 	@Override
 	public int compareTo(Trastero t) {
 		if(this.getNumTrastero() < t.getNumTrastero()) {
-			return 1;
+			return -1;
 		}
 		if(this.getNumTrastero() > t.getNumTrastero()) {
-			return -1;
+			return 1;
 		}else {
 			return 0;
 		}

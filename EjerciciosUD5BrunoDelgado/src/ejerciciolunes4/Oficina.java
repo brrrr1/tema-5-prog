@@ -1,5 +1,6 @@
 package ejerciciolunes4;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -29,13 +30,15 @@ public class Oficina {
 		lista.add(t);
 	}
 	
-	public Trastero buscarPorPrecio (double precio) {
+	public List<Trastero> buscarPorPrecio (double precio) {
+		List <Trastero> mismoPrecio = new ArrayList<Trastero>();
 		for (Trastero trastero : lista) {
 			if(trastero.getPrecio()==precio) {
-				return trastero;
+				mismoPrecio.add(trastero);
+				
 			}
 		}
-		return null;
+		return mismoPrecio;
 	}
 	
 	public Trastero buscarPorNum (int numTrastero) {
@@ -52,13 +55,12 @@ public class Oficina {
 		Trastero masCaro = null;
 		
 		for (Trastero trastero : lista) {
-			masCaro = trastero;
-			if(trastero.getPrecio() > masCaro.getPrecio()) {
+			if (masCaro == null || trastero.getPrecio() > masCaro.getPrecio()) {
 				masCaro = trastero;
 			}
 		}
-		return masCaro;	
-		}
+		return masCaro;
+	}
 	
 	public void eliminarTrastero(int numTrastero) {
 		Trastero t;
@@ -78,6 +80,12 @@ public class Oficina {
 			if (!trastero.isOcupado()) {
 				System.out.println(trastero);
 			}
+		}
+	}
+	
+	public void verLista() {
+		for (Trastero trastero : lista) {
+			System.out.println(trastero);
 		}
 	}
 	

@@ -46,8 +46,7 @@ public class Diccionario {
 		boolean encontrado = false;
 		int i = 0;
 		while(i<palabras.size() && !encontrado) {
-			Palabra deLista = palabras.get(i);
-			if(deLista.getNombre().equalsIgnoreCase(nombre)) {
+			if(palabras.get(i).getNombre().equalsIgnoreCase(nombre)) {
 				encontrado = true;
 			}else {
 				i++;

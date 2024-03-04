@@ -12,7 +12,7 @@ public class Secretaria {
 		this.ca = ca;
 	}
 	
-	public double calcularMediaCurso() {
+	/*public double calcularMediaCurso() {
 		Set <Alumno> lista = ca.getLista();
 	
 	
@@ -27,7 +27,7 @@ public class Secretaria {
 		Alumno a = null;
 		
 		while()
-	}
+	}*/
 	
 
 }
