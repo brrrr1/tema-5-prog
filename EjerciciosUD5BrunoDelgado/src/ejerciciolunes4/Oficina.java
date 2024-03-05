@@ -63,15 +63,14 @@ public class Oficina {
 	}
 	
 	public void eliminarTrastero(int numTrastero) {
-		Trastero t;
-		t = buscarPorNum(numTrastero);
-		lista.remove(t);
+		lista.remove(buscarPorNum(numTrastero));
 	}
 	
 	public void modificarTrastero(int numTrastero, double precio) {
-		Trastero t;
-		t = buscarPorNum(numTrastero);
-		t.setPrecio(precio);
+		if(buscarPorNum(numTrastero)!=null) {
+			buscarPorNum(numTrastero).setPrecio(precio);
+		}
+		
 		
 	}
 	

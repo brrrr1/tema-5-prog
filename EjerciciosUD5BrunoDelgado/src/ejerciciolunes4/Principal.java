@@ -78,7 +78,12 @@ public class Principal {
 			case 3:
 				System.out.println("Diga número");
 				numTrastero=Leer.datoInt();
-				System.out.println(o.buscarPorNum(numTrastero));
+				if(o.buscarPorNum(numTrastero) == null) {
+					System.out.println("No existe ese trastero");
+				}else {
+					System.out.println(o.buscarPorNum(numTrastero));
+				}
+				
 				
 				break;
 				
@@ -99,7 +104,12 @@ public class Principal {
 				numTrastero=Leer.datoInt();
 				System.out.println("Diga nuevo precio");
 				precio=Leer.datoDouble();
-				o.modificarTrastero(numTrastero, precio);
+				if(o.buscarPorNum(numTrastero)!=null) {
+					o.modificarTrastero(numTrastero, precio);
+				}else {
+					System.out.println("No existe ese trastero");
+				}
+				
 				
 				break;
 				

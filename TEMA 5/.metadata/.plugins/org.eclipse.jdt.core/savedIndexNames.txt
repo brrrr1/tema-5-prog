@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+C:\Users\bruno\OneDrive\Escritorio\CLASE\PROGRAMACIÓN\TEMA 5\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
-89803183.index
-4006365040.index
