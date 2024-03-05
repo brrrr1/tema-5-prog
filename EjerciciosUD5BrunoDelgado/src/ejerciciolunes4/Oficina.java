@@ -1,8 +1,10 @@
 package ejerciciolunes4;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class Oficina {
 	
@@ -30,8 +32,8 @@ public class Oficina {
 		lista.add(t);
 	}
 	
-	public List<Trastero> buscarPorPrecio (double precio) {
-		List <Trastero> mismoPrecio = new ArrayList<Trastero>();
+	public Set<Trastero> buscarPorPrecio (double precio) {
+		Set <Trastero> mismoPrecio = new HashSet<Trastero>();
 		for (Trastero trastero : lista) {
 			if(trastero.getPrecio()==precio) {
 				mismoPrecio.add(trastero);
@@ -51,15 +53,17 @@ public class Oficina {
 	return null;
 	}
 	
-	public Trastero devolverMasCaro() {
+	public List <Trastero> devolverMasCaro() {
 		Trastero masCaro = null;
-		
+		List <Trastero> masCaros = new ArrayList<>();
 		for (Trastero trastero : lista) {
 			if (masCaro == null || trastero.getPrecio() > masCaro.getPrecio()) {
 				masCaro = trastero;
+				masCaros.add(masCaro);
+				
 			}
 		}
-		return masCaro;
+		return masCaros;
 	}
 	
 	public void eliminarTrastero(int numTrastero) {

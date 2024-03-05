@@ -60,7 +60,7 @@ public class Diccionario {
 		}
 	}
 	
-	public void agregar (Palabra p, String significado) {
+	/*public void agregar (Palabra p, String significado) {
 		Iterator <Palabra> ite = palabras.iterator();
 		Palabra palabraParaRecorrerElIterator;
 		while(ite.hasNext()) {
@@ -75,7 +75,7 @@ public class Diccionario {
 			if(!p.getNombre().equalsIgnoreCase(palabraParaRecorrerElIterator.getNombre()));
 		}
 		
-	}
+	}*/
 	
 	public void modificarSignificado(String significado, Palabra p) {
 		p.setSignificado(significado);

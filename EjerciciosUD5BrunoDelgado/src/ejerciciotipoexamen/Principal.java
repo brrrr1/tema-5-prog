@@ -61,7 +61,7 @@ public class Principal {
 				System.out.println();
 				break;
 				
-			case 3:
+			/*case 3:
 
 				System.out.print("Palabra en inglés:");
 				nombre=Leer.dato();
@@ -72,7 +72,7 @@ public class Principal {
 				Palabra pal = new Palabra(id, nombre, significado);
 				d.agregar(pal, significado);
 				id++;
-				break;
+				break;*/
 				
 			case 4:
 				
