@@ -25,7 +25,7 @@ public class Principal {
 		
 		anio=Leer.datoInt();
 		
-		System.out.println(g.calcularTiempoDesdeLaUltimaFinal(anio));
+		System.out.println("Han pasado "+g.calcularTiempoDesdeLaUltimaFinal(anio)+ "años");
 		
 		System.out.println("Quedan "+g.calcularTiempoParaLaFinal()+" días para la final");
 	}
